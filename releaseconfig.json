@@ -133,7 +133,7 @@
             {
                 "uri_prefix": "/css",
                 "default_content_type": "text/css",
-                "alias": "/home/eltu/dev/aweb-2do-trimestre-proyecto/css",
+                "alias": "/aweb-proj/css",
                 "is_case_sensitive": true,
                 "allow_all": false,
                 "is_recursive": true,
@@ -142,7 +142,7 @@
             {
                 "uri_prefix": "/js",
                 "default_content_type": "text/javascript",
-                "alias": "/home/eltu/dev/aweb-2do-trimestre-proyecto/js",
+                "alias": "/aweb-proj/js",
                 "is_case_sensitive": true,
                 "allow_all": false,
                 "is_recursive": true,
@@ -168,12 +168,12 @@
         "dynamic_views_output_path": "",
         //enable_unicode_escaping_in_json: true by default, enable unicode escaping in json.
         "enable_unicode_escaping_in_json": true,
-        //float_precision_in_json: set precision of float number in json. 
+        //float_precision_in_json: set precision of float number in json.
         "float_precision_in_json": {
-            //precision: 0 by default, 0 means use the default precision of the jsoncpp lib. 
+            //precision: 0 by default, 0 means use the default precision of the jsoncpp lib.
             "precision": 0,
-            //precision_type: must be "significant" or "decimal", defaults to "significant" that means 
-            //setting max number of significant digits in string, "decimal" means setting max number of 
+            //precision_type: must be "significant" or "decimal", defaults to "significant" that means
+            //setting max number of significant digits in string, "decimal" means setting max number of
             //digits after "." in string
             "precision_type": "significant"
         },
