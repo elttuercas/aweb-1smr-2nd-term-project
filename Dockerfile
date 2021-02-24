@@ -45,9 +45,6 @@ COPY ./models /aweb-proj/models
 # Create webpack production files
 RUN npm run prod
 
-# Copy the cmake modules for proper compilation
-COPY ./cmake_modules /aweb-proj/cmake_modules
-
 # Change to build directory and compile the application
 WORKDIR /aweb-proj/build
 RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-fcoroutines" ..
