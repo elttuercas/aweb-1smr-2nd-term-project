@@ -51,13 +51,26 @@ mix
                 tailwindcss
             ]
         }
+    )
+    .sass(
+        './scss/std_footer.scss',
+        './css'
+    )
+    .options(
+        {
+            processCssUrls: false,
+            postCss: [
+                tailwindcss
+            ]
+        }
     );
 
 // Concatenate all CSS assets together.
 mix.styles(
     [
         './css/global.css',
-        './css/std_header.css'
+        './css/std_header.css',
+        './css/std_footer.css'
     ],
     './css/global.css'
 );

@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <script src="/js/global.js"></script>
-    <title>Aprende a Programar</title>
+    <title>Inicio - CA</title>
 </head>
 <body>
 <!-- Standard header -->
 <%view ./views/header.csp %>
+<!-- Standard footer -->
+<%view ./views/footer.csp %>
 </body>
 </html>
