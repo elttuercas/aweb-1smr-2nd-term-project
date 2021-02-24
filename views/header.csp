@@ -1,0 +1,38 @@
+<div class="std_header">
+    <div class="std_header_container">
+        <div class="std_header_mobile_btn_container">
+            <a href="/" class="std_header_home_link">Carlos Amores</a>
+            <button id="std_header_mobile_btn" class="std_header_mobile_btn">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path id="std_header_closed_icon" fill-rule="evenodd"
+                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                          clip-rule="evenodd"></path>
+                    <path id="std_header_open_icon" fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="std_nav" class="std_nav">
+            <a href="/" class="std_nav_link">Home</a>
+            <a href="#" class="std_nav_link">Other</a>
+            <div class="std_nav_dropdown">
+                <button id="std_nav_dropdown_button" class="std_nav_dropdown_button">
+                    <span>Dropdown</span>
+                    <svg id="std_nav_dropdown_button_icon" class="std_nav_dropdown_button_icon" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div id="std_nav_dropdown_container" class="std_nav_dropdown_container">
+                    <div class="std_nav_dropdown_content">
+                        <a href="#" class="std_nav_dropdown_link">Link 1</a>
+                        <a href="#" class="std_nav_dropdown_link">Link 2</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
