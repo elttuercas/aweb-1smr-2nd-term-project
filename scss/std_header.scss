@@ -22,6 +22,12 @@ div {
                         &.std_header_mobile_btn {
                             @apply md:hidden rounded-lg focus:outline-none;
 
+                            svg {
+                                &.std_header_mobile_menu_icon {
+                                    @apply w-6 h-6;
+                                }
+                            }
+
                             path {
                                 &#std_header_open_icon {
                                     @apply hidden;
