@@ -34,7 +34,7 @@
             //rdbms: Server type, postgresql,mysql or sqlite3, "postgresql" by default
             "rdbms": "sqlite3",
             //filename: Sqlite3 db file name
-            "filename" : "main_db.sqlite",
+            "filename" : "../main_db.sqlite",
             //is_fast: false by default, if it is true, the client is faster but user can't call
             //any synchronous interface of it.
             "is_fast": false,
