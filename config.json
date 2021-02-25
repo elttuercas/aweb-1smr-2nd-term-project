@@ -153,7 +153,7 @@
             },
             {
                 "uri_prefix": "/fonts",
-                "default_content_type": "text/javascript",
+                "default_content_type": "font/woff",
                 "alias": "/home/eltu/dev/aweb-2do-trimestre-proyecto/node_modules/@iconscout/unicons/fonts",
                 "is_case_sensitive": true,
                 "allow_all": false,
