@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/global.js"></script>
+    <title>Contacto - CA</title>
+</head>
+<body>
+<!-- Standard header -->
+<%view ./views/vstd/header.csp %>
+<div class="contact_form_header">
+    Contáctanos
+</div>
+<form action="/contact/" class="contact_form" method="post">
+    <!-- Name and surname row -->
+    <div class="contact_form_field_row">
+        <div class="contact_form_half_row" id="contact_form_name">
+            <label for="input_name" class="contact_form_field_label">Nombre<sup
+                    class="contact_form_required">*</sup></label>
+            <input type="text" class="contact_form_field_input contact_form_field_input_normal" name="name"
+                   id="input_name" placeholder="Carlos">
+        </div>
+        <div class="contact_form_half_row" id="contact_form_surname">
+            <label for="input_surname" class="contact_form_field_label">Apellidos<sup
+                    class="contact_form_required">*</sup></label>
+            <input type="text" class="contact_form_field_input contact_form_field_input_normal" name="surname"
+                   id="input_surname" placeholder="Amores">
+        </div>
+    </div>
+    <!-- Email row -->
+    <div class="contact_form_field_row">
+        <div class="contact_form_full_row" id="contact_form_email">
+            <label for="input_email" class="contact_form_field_label">Email<sup
+                    class="contact_form_required">*</sup></label>
+            <input type="email" name="email" id="input_email"
+                   class="contact_form_field_input contact_form_field_input_normal"
+                   placeholder="example@eltu.engineer">
+        </div>
+    </div>
+    <!-- Message row -->
+    <div class="contact_form_field_row">
+        <div class="contact_form_full_row" id="contact_form_message">
+            <label for="textarea_message" class="contact_form_field_label">Mensaje<sup
+                    class="contact_form_required">*</sup></label>
+            <textarea name="message" id="textarea_message"
+                      class="contact_form_field_input contact_form_field_input_normal"></textarea>
+        </div>
+    </div>
+    <div class="contact_form_submit_row">
+        <div class="contact_form_submit_row_ls">
+            <button type="submit" class="contact_form_submit_btn">Enviar</button>
+        </div>
+        <div class="contact_form_submit_row_rs"></div>
+    </div>
+</form>
+<!-- Standard footer -->
+<%view ./views/vstd/footer.csp %>
+</body>
+</html>

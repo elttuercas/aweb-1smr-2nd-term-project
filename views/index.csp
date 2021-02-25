@@ -9,8 +9,8 @@
 </head>
 <body>
 <!-- Standard header -->
-<%view ./views/header.csp %>
+<%view ./views/vstd/header.csp %>
 <!-- Standard footer -->
-<%view ./views/footer.csp %>
+<%view ./views/vstd/footer.csp %>
 </body>
 </html>

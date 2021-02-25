@@ -14,7 +14,7 @@
             </button>
         </div>
         <nav id="std_nav" class="std_nav">
-            <a href="/" class="std_nav_link">Home</a>
+            <a href="/" class="std_nav_link">Inicio</a>
             <a href="#" class="std_nav_link">Other</a>
             <div class="std_nav_dropdown">
                 <button id="std_nav_dropdown_button" class="std_nav_dropdown_button">

@@ -1,0 +1,41 @@
+<footer class="std_footer">
+    <div class="std_footer_container">
+        <!-- Column 1 - Services -->
+        <div class="std_footer_column">
+            <div class="std_footer_column_title">Servicios</div>
+            <a href="/services/webops/" class="std_footer_link">Desarrollo Web</a>
+            <a href="/services/dbops/" class="std_footer_link">Gestión de Bases de Datos</a>
+        </div>
+        <!-- Column 2 - Docs -->
+        <div class="std_footer_column">
+            <div class="std_footer_column_title">Documentación</div>
+            <a href="/docs/api/" class="std_footer_link">API</a>
+            <a href="https://drogon.docsforge.com" class="std_footer_link">Drogon Framework</a>
+        </div>
+        <!-- Column 3 - Community -->
+        <div class="std_footer_column">
+            <div class="std_footer_column_title">Comunidad</div>
+            <a href="https://github.com/elttuercas/aweb-1smr-2nd-term-project" class="std_footer_link">GitHub</a>
+            <a href="https://twitter.com/" class="std_footer_link">Twitter</a>
+            <a href="https://discord.com/" class="std_footer_link">Discord</a>
+        </div>
+        <!-- Column 4 - Other -->
+        <div class="std_footer_column">
+            <div class="std_footer_column_title">Otros</div>
+            <a href="/contact/" class="std_footer_link">Contacto</a>
+            <a href="/about-us/" class="std_footer_link">Nosotros</a>
+            <a href="https://www.jetbrains.com/" class="std_footer_link">IDEs</a>
+        </div>
+    </div>
+    <div class="std_footer_bottom">
+        <div class="std_footer_bottom_container">
+            <div class="std_footer_copy">
+                &copy; Copyright 2021. Todos los derechos reservados.
+            </div>
+            <div class="std_footer_bottom_icons">
+                <a href="https://github.com/elttuercas" class="std_footer_bottom_link"><i class="uil uil-github"></i></a>
+                <a href="https://www.linkedin.com/" class="std_footer_bottom_link"><i class="uil uil-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -2,3 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "~@iconscout/unicons/css/line.css";
+
+body {
+    @apply flex flex-col h-screen justify-between;
+}
