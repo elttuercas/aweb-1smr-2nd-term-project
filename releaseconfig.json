@@ -154,7 +154,7 @@
             {
                 "uri_prefix": "/fonts",
                 "default_content_type": "font/woff",
-                "alias": "/aweb-proj/node_modules/@iconsout/unicons/fonts",
+                "alias": "/aweb-proj/node_modules/\\@iconsout/unicons/fonts",
                 "is_case_sensitive": true,
                 "allow_all": false,
                 "is_recursive": true,
