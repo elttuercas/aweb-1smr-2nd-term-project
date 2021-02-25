@@ -51,7 +51,7 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-fcoroutines" ..
 RUN make
 
 # Create a symlink to be able to serve the fonts since otherwise it no worky
-RUN ln -s /aweb-proj/node_modules/\@iconsout/unicons/fonts /aweb-proj/fonts
+RUN ln -s /aweb-proj/node_modules/\@iconscout/unicons/fonts/ /aweb-proj/fonts
 
 # Run web application
 CMD ["/aweb-proj/build/aweb-1smr-2nd-term-project"]
