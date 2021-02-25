@@ -40,3 +40,4 @@ js
 css
 !webpack.mix.js
 !tailwind.config.js
+main_db.sqlite

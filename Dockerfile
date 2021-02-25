@@ -42,6 +42,9 @@ COPY ./views /aweb-proj/views
 # Copy database model spec file and C++ model source files
 COPY ./models /aweb-proj/models
 
+# Copy empty sqlite database template
+COPY ./main_db_tmpl.sqlite /aweb-proj/main_db.sqlite
+
 # Create webpack production files
 RUN npm run prod
 

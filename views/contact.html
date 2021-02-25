@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <script src="/js/global.js"></script>
+    <script src="/js/contact_form.js"></script>
     <title>Contacto - CA</title>
 </head>
 <body>
 <!-- Standard header -->
 <%view ./views/vstd/header.csp %>
 <div class="contact_form_header">
-    Contáctanos
+    Contacta con nosotros
 </div>
-<form action="/contact/" class="contact_form" method="post">
+<form action="/contact/" class="contact_form" method="post" id="contact_form">
     <!-- Name and surname row -->
     <div class="contact_form_field_row">
         <div class="contact_form_half_row" id="contact_form_name">

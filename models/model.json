@@ -1,20 +1,8 @@
 {
     //rdbms: server type, postgresql,mysql or sqlite3
-    "rdbms": "postgresql",
+    "rdbms": "sqlite3",
     //filename: sqlite3 db file name
-    //"filename":"",
-    //host: server address,localhost by default;
-    "host": "127.0.0.1",
-    //port: server port, 5432 by default;
-    "port": 5432,
-    //dbname: Database name;
-    "dbname": "",
-    //schema: valid for postgreSQL, "public" by default;
-    "schema": "public",
-    //user: User name
-    "user": "",
-    //password or passwd: Password
-    "password": "",
+    "filename": "main_db.sqlite",
     //client_encoding: The character set used by drogon_ctl. it is empty string by default which 
     //means use the default character set.
     //"client_encoding": "",
@@ -22,42 +10,7 @@
     "tables": [],
     "relationships": {
         "enabled": false,
-        "items": [{
-                "type": "has one",
-                "original_table_name": "products",
-                "original_table_alias": "product",
-                "original_key": "id",
-                "target_table_name": "skus",
-                "target_table_alias": "SKU",
-                "target_key": "product_id",
-                "enable_reverse": true
-            },
-            {
-                "type": "has many",
-                "original_table_name": "products",
-                "original_table_alias": "product",
-                "original_key": "id",
-                "target_table_name": "reviews",
-                "target_table_alias": "",
-                "target_key": "product_id",
-                "enable_reverse": true
-            },
-            {
-                "type": "many to many",
-                "original_table_name": "products",
-                "original_table_alias": "",
-                "original_key": "id",
-                "pivot_table": {
-                    "table_name": "carts_products",
-                    "original_key": "product_id",
-                    "target_key": "cart_id"
-                },
-                "target_table_name": "carts",
-                "target_table_alias": "",
-                "target_key": "id",
-                "enable_reverse": true
-            }
-        ]
+        "items": []
     },
     "restful_api_controllers": {
         "enabled": false,

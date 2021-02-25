@@ -1,16 +1,19 @@
 import * as $ from 'jquery';
 import * as _ from 'lodash';
 
+(<any>window).$ = $;
+(<any>window)._ = _;
+
 /**
  * Attach a couple of event listeners to the nav menu button for mobile view opening and closing.
  */
 $(function () : void
 {
-    let navOpen : boolean = false;
+    let navOpen : boolean     = false;
     let mobileNavBtn : JQuery = $('#std_header_mobile_btn').first();
-    let openIcon : JQuery = $('#std_header_open_icon');
-    let closedIcon : JQuery = $('#std_header_closed_icon');
-    let navMenu : JQuery = $('#std_nav');
+    let openIcon : JQuery     = $('#std_header_open_icon');
+    let closedIcon : JQuery   = $('#std_header_closed_icon');
+    let navMenu : JQuery      = $('#std_nav');
 
     mobileNavBtn.on('click', function () : void
     {
@@ -40,9 +43,9 @@ $(function () : void
  */
 $(function () : void
 {
-    let dropdownOpen : boolean = false;
-    let dropdownButton : JQuery = $('#std_nav_dropdown_button');
-    let dropdownIcon : JQuery = $('#std_nav_dropdown_button_icon');
+    let dropdownOpen : boolean     = false;
+    let dropdownButton : JQuery    = $('#std_nav_dropdown_button');
+    let dropdownIcon : JQuery      = $('#std_nav_dropdown_button_icon');
     let dropdownContainer : JQuery = $('#std_nav_dropdown_container');
 
     dropdownButton.on('click', function (evt : JQuery.ClickEvent) : void
