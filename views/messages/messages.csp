@@ -1,0 +1,61 @@
+<%inc #include "models/ContactMessages.h" %>
+<%c++ const auto rgMessages = @@.get<const std::vector<drogon_model::sqlite3::ContactMessages>>("contactMessages"); %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/global.js"></script>
+    <title>Mensajes Contacto - CA</title>
+</head>
+<body>
+<!-- Standard header -->
+<%view ./views/vstd/header.csp %>
+
+<div class="contact_messages_table_container">
+    <div class="contact_messages_table_tools">
+        <div class="contact_messages_table_search_container">
+            <label for="contact_messages_table_search_input">
+                <input type="text" class="contact_messages_table_search_input" id="contact_messages_table_search_input" placeholder="Buscar...">
+                <i class="contact_messages_table_search_icon uil uil-search"></i>
+            </label>
+            <label for="contact_messages_table_search_modifier">
+                <select class="contact_messages_table_search_modifier" id="contact_messages_table_search_modifier">
+                    <option value="1">Nombre</option>
+                    <option value="2">Apellidos</option>
+                    <option value="3">Email</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <table class="contact_messages_table">
+        <thead>
+            <%c++ for (const drogon_model::sqlite3::ContactMessages &msg : rgMessages) { %>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            <%c++ } %>
+        </thead>
+        <tbody>
+            <%c++ for (const drogon_model::sqlite3::ContactMessages &msg : rgMessages) { %>
+                <tr>
+                    <td>{%*msg.getSubmissionTs()%}</td>
+                    <td>{%*msg.getName()%}</td>
+                    <td>{%*msg.getSurname()%}</td>
+                    <td>{%*msg.getEmail()%}</td>
+                    <td><a href="/contact/messages/view/{%*msg.getHash()%}/">VER</a></td>
+                </tr>
+            <%c++ } %>
+        </tbody>
+    </table>
+</div>
+
+<!-- Standard footer -->
+<%view ./views/vstd/footer.csp %>
+</body>
+</html>

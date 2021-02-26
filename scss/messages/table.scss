@@ -1,0 +1,96 @@
+div {
+    &.contact_messages_table_container {
+        @apply flex flex-col shadow-md container;
+
+        div {
+            &.contact_messages_table_tools {
+                @apply grid md:grid-cols-4 lg:grid-cols-5 bg-gray-50 p-6 space-y-2;
+                @apply md:space-y-0;
+
+                div {
+                    &.contact_messages_table_search_container {
+                        @apply relative md:col-span-3;
+
+                        input.contact_messages_table_search_input, select.contact_messages_table_search_modifier {
+                            @apply inline-block border border-gray-300 sm:text-sm focus:ring-0 focus:outline-none;
+                            @apply text-gray-700 bg-gray-200 focus:border-gray-500 focus:bg-white focus:z-10 shadow-sm;
+                        }
+
+                        input {
+                            &.contact_messages_table_search_input {
+                                @apply w-3/5 px-8 py-2 placeholder-gray-500;
+                                @apply rounded-l-md;
+                            }
+                        }
+
+                        select {
+                            &.contact_messages_table_search_modifier {
+                                @apply w-1/5 -mx-1 rounded-r-md;
+                            }
+                        }
+
+                        i {
+                            &.contact_messages_table_search_icon {
+                                @apply absolute left-3 bottom-4 h-4 w-4 text-gray-500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        table {
+            &.contact_messages_table {
+                @apply w-full flex flex-row flex-nowrap sm:bg-gray-50 overflow-hidden sm:shadow-lg;
+
+                thead {
+
+                    tr {
+                        @apply bg-blue-100 flex flex-col flex-nowrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0;
+                    }
+
+                    th {
+                        @apply p-4 text-left text-sm font-medium text-gray-700 uppercase leading-tight;
+
+                        &:not(:last-child) {
+                            @apply border-b-2;
+                        }
+                    }
+                }
+
+                tbody {
+                    @apply text-gray-700 text-sm flex-1 sm:flex-none;
+
+                    tr {
+                        @apply bg-gray-50 font-medium text-sm flex flex-col flex-nowrap sm:table-row mb-2 sm:mb-0;
+
+                        td {
+                            @apply p-4 whitespace-nowrap;
+
+                            &:last-of-type {
+                                @apply text-center;
+                            }
+
+                            &:not(:last-child) {
+                                @apply border-b-0;
+                            }
+
+                            a {
+                                @apply inline-block text-sm px-4 py-2 leading-none border rounded text-gray-700;
+                                @apply hover:border-transparent hover:text-white border-green-500 hover:bg-green-500;
+                            }
+                        }
+                    }
+                }
+
+                @media (min-width: 640px) {
+                    display: inline-table !important;
+
+                    thead tr:not(:first-child) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

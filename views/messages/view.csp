@@ -1,0 +1,30 @@
+<%c++ uint64_t messageID = @@.get<uint64_t>("messageID"); %>
+<!DOCTYPE html>
+<!--
+Template data:
+messageID - int
+senderName - std::string
+senderSurname - std::string
+senderEmail - std::string
+message - std::string
+-->
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/global.js"></script>
+    <title>Mensaje {%messageID%} - CA</title>
+</head>
+<body>
+<!-- Standard header -->
+<%view ./views/vstd/header.csp %>
+Nombre: [[senderName]]
+Apellidos: [[senderSurname]]
+Email: [[senderEmail]]
+Fecha: TODO
+Mensaje: [[message]]
+<!-- Standard footer -->
+<%view ./views/vstd/footer.csp %>
+</body>
+</html>

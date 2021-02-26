@@ -73,7 +73,7 @@ void ContactController::post(
     // Calculate the hash of the contact form through a simple MD5 hash which takes into account all inputs plus time.
     std::string strContactHash = drogon::utils::getMd5(
             rgPostData.at("name") + rgPostData.at("surname") + rgPostData.at("email")
-            + rgPostData.at("email") + rgPostData.at("message") + std::to_string(iEpochTimestamp)
+            + rgPostData.at("message") + std::to_string(iEpochTimestamp)
     );
     contactMessage.setHash(strContactHash);
 
