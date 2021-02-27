@@ -2,6 +2,7 @@
 
 #include <drogon/HttpController.h>
 #include "models/ContactMessages.h"
+#include "plugins/Aweb_Utils.h"
 
 using namespace drogon;
 

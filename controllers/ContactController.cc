@@ -56,11 +56,20 @@ void ContactController::post(
     // All good so far, create the database record.
     drogon::orm::Mapper<drogon_model::sqlite3::ContactMessages> contactMessagesMapper(drogon::app().getDbClient());
 
+    // Escape the input before adding it to the database.
+    auto *pUtils = drogon::app().getPlugin<Aweb::Utils>();
+
+    std::string strSafeName, strSafeSurname, strSafeEmail, strSafeMessage;
+    strSafeName    = pUtils->htmlSpecialChars(rgPostData.at("name"));
+    strSafeSurname = pUtils->htmlSpecialChars(rgPostData.at("surname"));
+    strSafeEmail   = pUtils->htmlSpecialChars(rgPostData.at("email"));
+    strSafeMessage = pUtils->htmlSpecialChars(rgPostData.at("message"));
+
     drogon_model::sqlite3::ContactMessages contactMessage;
-    contactMessage.setName(rgPostData.at("name"));
-    contactMessage.setSurname(rgPostData.at("surname"));
-    contactMessage.setEmail(rgPostData.at("email"));
-    contactMessage.setMessage(rgPostData.at("message"));
+    contactMessage.setName(strSafeName);
+    contactMessage.setSurname(strSafeSurname);
+    contactMessage.setEmail(strSafeEmail);
+    contactMessage.setMessage(strSafeMessage);
 
     // Get the current unix timestamp.
     std::chrono::time_point<std::chrono::system_clock> tpNow = std::chrono::system_clock::now();
@@ -72,8 +81,7 @@ void ContactController::post(
 
     // Calculate the hash of the contact form through a simple MD5 hash which takes into account all inputs plus time.
     std::string strContactHash = drogon::utils::getMd5(
-            rgPostData.at("name") + rgPostData.at("surname") + rgPostData.at("email")
-            + rgPostData.at("message") + std::to_string(iEpochTimestamp)
+            strSafeName + strSafeSurname + strSafeEmail + strSafeMessage + std::to_string(iEpochTimestamp)
     );
     contactMessage.setHash(strContactHash);
 
@@ -82,7 +90,7 @@ void ContactController::post(
             contactMessage,
             [callback](const drogon_model::sqlite3::ContactMessages &model)
             {
-                // Take the user to the created log.
+                // Take the user to the created message.
                 callback(
                         drogon::HttpResponse::newRedirectionResponse(
                                 "/contact/messages/view/" + *model.getHash() + '/'

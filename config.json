@@ -250,7 +250,11 @@
         "client_max_websocket_message_size": "128K"
     },
     //plugins: Define all plugins running in the application
-    "plugins": [],
+    "plugins": [
+        {
+            "name": "Aweb::Utils"
+        }
+    ],
     //custom_config: custom configuration for users. This object can be get by the app().getCustomConfig() method.
     "custom_config": {}
 }
