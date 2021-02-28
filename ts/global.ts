@@ -159,7 +159,7 @@ $(document).on('click', '.std_alert_close_container', function ()
 {
     $(this).parents('.std_alert_container').remove();
     // Check whether there are alerts left in the container. If not, hide it.
-    let alertsContainer : JQuery = $(this).parents('#std_alerts_container');
+    let alertsContainer : JQuery = $('#std_alerts_container');
     if (alertsContainer.children().length === 0)
     {
         alertsContainer.hide();
