@@ -147,6 +147,7 @@ $(document).on('click', '.delete_link', function ()
             success : function ()
             {
                 $().appendAlert('green', 'Mensaje borrado con éxito');
+                $this.parents('tr').remove();
             },
             error : function ()
             {

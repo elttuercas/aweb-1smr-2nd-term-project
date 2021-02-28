@@ -50,6 +50,7 @@ $.fn.extend(
             alertContainer.append(alertIcon, $alertText, alertCloseBtnContainer);
             // Append the alert container to the alerts container.
             alertsContainer.append(alertContainer);
+            alertsContainer.show();
         }
     }
 );
@@ -157,4 +158,24 @@ $(function ()
 $(document).on('click', '.std_alert_close_container', function ()
 {
     $(this).parents('.std_alert_container').remove();
+    // Check whether there are alerts left in the container. If not, hide it.
+    let alertsContainer : JQuery = $(this).parents('#std_alerts_container');
+    if (alertsContainer.children().length === 0)
+    {
+        alertsContainer.hide();
+    }
+});
+
+/**
+ * Event listener to hide the alerts container div when it has no children. This could be done with CSS using the
+ * pseudo-element selector :empty but it only works when there is nothing between the tags or only an HTML comment.
+ * Since the div is generated with drogon templates, there are more than a few spaces so it is never targeted by :empty.
+ */
+$(function ()
+{
+    let alertsContainer : JQuery = $('#std_alerts_container');
+    if (alertsContainer.children().length === 0)
+    {
+        alertsContainer.hide();
+    }
 });
