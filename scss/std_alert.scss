@@ -1,7 +1,55 @@
 div {
-    &.std_alert_container {
-        @apply p-5;
+    &.std_alerts_container {
+        @apply p-5 container;
 
+        div {
+            &.std_alert_container {
+                @apply flex justify-center items-center mx-1 font-medium py-1 px-2 rounded-md border;
 
+                i {
+                    &.std_alert_icon {
+                        @apply w-5 h-5 mx-2;
+                    }
+                }
+
+                div {
+                    &.std_alert_text {
+                        @apply text-xl font-normal max-w-full flex-initial ml-2;
+                    }
+
+                    &.std_alert_close_container {
+                        @apply flex flex-auto flex-row-reverse;
+
+                        i {
+                            @apply cursor-pointer rounded-full w-5 h-5 ml-2 hover:text-black;
+                        }
+                    }
+                }
+            }
+
+            &.std_alert_red {
+                @apply text-red-700 bg-red-100 border-red-300;
+            }
+
+            &.std_alert_red_alt {
+                @apply text-red-100 bg-red-700 border-red-700;
+            }
+
+            &.std_alert_yellow {
+                @apply text-yellow-700 bg-yellow-100 border-yellow-300;
+            }
+
+            &.std_alert_yellow_alt {
+                @apply text-yellow-100 bg-yellow-700 border-yellow-700;
+            }
+
+            &.std_alert_green {
+                @apply text-green-700 bg-green-100 border-green-300;
+            }
+
+            &.std_alert_green_alt {
+                @apply text-green-100 bg-green-700 border-green-700;
+            }
+        }
     }
 }

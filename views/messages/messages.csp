@@ -63,7 +63,10 @@ auto rgMessageDates = @@.get<std::map<std::string, std::string>>("contactMessage
                     <td>{%*msg.getName()%}</td>
                     <td>{%*msg.getSurname()%}</td>
                     <td>{%*msg.getEmail()%}</td>
-                    <td><a href="/contact/messages/view/{%*msg.getHash()%}/">VER</a></td>
+                    <td>
+                        <a class="view_link" href="/contact/messages/view/{%*msg.getHash()%}/">VER</a>
+                        <a class="delete_link" href="#" data-hash="{%*msg.getHash()%}">BORRAR</a>
+                    </td>
                 </tr>
             <%c++ } %>
         </tbody>

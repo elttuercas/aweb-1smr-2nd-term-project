@@ -1,3 +1,8 @@
+<%c++ auto rgAlerts = @@.get<std::map<std::string, std::vector<std::string>>>("alerts"); %>
+<!--
+Template parameters:
+alerts - std::map<std::string, std::vector<std::string>>
+-->
 <div class="std_header">
     <div class="std_header_container">
         <div class="std_header_mobile_btn_container">
@@ -35,4 +40,61 @@
             </div>
         </nav>
     </div>
+</div>
+<div class="std_alerts_container" id="std_alerts_container">
+    <!-- Generate the alerts as passed by the template parameters. -->
+    <%c++ for (const std::string &strAlert : rgAlerts["red"]) { %>
+        <div class="std_alert_container std_alert_red">
+            <i class="uil uil-exclamation-octagon"></i>
+            <div class="std_alert_text">{%strAlert%}</div>
+            <div class="std_alert_close_container">
+                <i class="uil uil-times"></i>
+            </div>
+        </div>
+    <%c++ } %>
+    <%c++ for (const std::string &strAlert : rgAlerts["redAlt"]) { %>
+    <div class="std_alert_container std_alert_red_alt">
+        <i class="uil uil-exclamation-octagon"></i>
+        <div class="std_alert_text">{%strAlert%}</div>
+        <div class="std_alert_close_container">
+            <i class="uil uil-times"></i>
+        </div>
+    </div>
+    <%c++ } %>
+    <%c++ for (const std::string &strAlert : rgAlerts["yellow"]) { %>
+    <div class="std_alert_container std_alert_yellow">
+        <i class="uil uil-exclamation-circle"></i>
+        <div class="std_alert_text">{%strAlert%}</div>
+        <div class="std_alert_close_container">
+            <i class="uil uil-times"></i>
+        </div>
+    </div>
+    <%c++ } %>
+    <%c++ for (const std::string &strAlert : rgAlerts["yellowAlt"]) { %>
+    <div class="std_alert_container std_alert_yellow_alt">
+        <i class="uil uil-exclamation-circle"></i>
+        <div class="std_alert_text">{%strAlert%}</div>
+        <div class="std_alert_close_container">
+            <i class="uil uil-times"></i>
+        </div>
+    </div>
+    <%c++ } %>
+    <%c++ for (const std::string &strAlert : rgAlerts["green"]) { %>
+    <div class="std_alert_container std_alert_green">
+        <i class="uil uil-check-circle"></i>
+        <div class="std_alert_text">{%strAlert%}</div>
+        <div class="std_alert_close_container">
+            <i class="uil uil-times"></i>
+        </div>
+    </div>
+    <%c++ } %>
+    <%c++ for (const std::string &strAlert : rgAlerts["greenAlt"]) { %>
+    <div class="std_alert_container std_alert_green_alt">
+        <i class="uil uil-check-circle"></i>
+        <div class="std_alert_text">{%strAlert%}</div>
+        <div class="std_alert_close_container">
+            <i class="uil uil-times"></i>
+        </div>
+    </div>
+    <%c++ } %>
 </div>

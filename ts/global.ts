@@ -4,6 +4,56 @@ import * as _ from 'lodash';
 (<any>window).$ = $;
 (<any>window)._ = _;
 
+$.fn.extend(
+    {
+        /**
+         * Plugin to create an alert in the page where the code is executed. The alert should only be created
+         * after server-side alerts given that the function should only be called when the document has fully loaded.
+         * @param alertType
+         * @param alertText
+         * @param altStyle
+         */
+        appendAlert : function (alertType : 'red' | 'yellow' | 'green', alertText : string, altStyle : boolean = true)
+        {
+            let alertsContainer : JQuery = $('#std_alerts_container');
+            // Create the alert.
+            let alertContainer : JQuery  = $('<div>')
+                .addClass('std_alert_container')
+                .addClass('std_alert_' + alertType + (altStyle ? '_alt' : ''));
+
+            // Create the alert icon.
+            let alertIcon : JQuery = $('<i>').addClass('uil');
+            if (alertType === 'red')
+            {
+                alertIcon.addClass('uil-exclamation-octagon');
+            }
+            else if (alertType === 'yellow')
+            {
+                alertIcon.addClass('uil-exclamation-circle');
+            }
+            else
+            {
+                alertIcon.addClass('uil-check-circle');
+            }
+
+            // Create the alert text.
+            let $alertText : JQuery = $('<div>' + alertText + '</div>').addClass('std_alert_text');
+
+            // Create the alert close button container.
+            let alertCloseBtnContainer : JQuery = $('<div>')
+                .addClass('std_alert_close_container')
+                .append(
+                    $('<i>').addClass('uil').addClass('uil-times')
+                );
+
+            // Append all of the elements to the alert container.
+            alertContainer.append(alertIcon, $alertText, alertCloseBtnContainer);
+            // Append the alert container to the alerts container.
+            alertsContainer.append(alertContainer);
+        }
+    }
+);
+
 /**
  * Attach a couple of event listeners to the nav menu button for mobile view opening and closing.
  */
@@ -99,4 +149,12 @@ $(function ()
             return false;
         }
     });
+});
+
+/**
+ * Event listener to remove the alerts when the close button is clicked.
+ */
+$(document).on('click', '.std_alert_close_container', function ()
+{
+    $(this).parents('.std_alert_container').remove();
 });

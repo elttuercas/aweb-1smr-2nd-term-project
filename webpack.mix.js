@@ -87,6 +87,18 @@ mix
                 tailwindcss
             ]
         }
+    )
+    .sass(
+        './scss/std_alert.scss',
+        './css'
+    )
+    .options(
+        {
+            processCssUrls: false,
+            postCss: [
+                tailwindcss
+            ]
+        }
     );
 
 // Concatenate all CSS assets together.
@@ -96,7 +108,8 @@ mix.styles(
         './css/std_header.css',
         './css/std_footer.css',
         './css/contact_form.css',
-        './css/messages/table.css'
+        './css/messages/table.css',
+        './css/std_alert.css'
     ],
     './css/global.css'
 );

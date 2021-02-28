@@ -77,7 +77,14 @@ div {
 
                             a {
                                 @apply inline-block text-sm px-4 py-2 leading-none border rounded text-gray-700;
-                                @apply hover:border-transparent hover:text-white border-green-500 hover:bg-green-500;
+                                @apply hover:border-transparent hover:text-white;
+
+                                &.view_link {
+                                    @apply border-green-500 hover:bg-green-500;
+                                }
+                                &.delete_link {
+                                    @apply border-red-500 hover:bg-red-500;
+                                }
                             }
                         }
                     }

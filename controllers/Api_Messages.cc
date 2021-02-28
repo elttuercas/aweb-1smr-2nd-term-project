@@ -24,10 +24,10 @@ void Messages::handleQuery(
                         drogon::orm::CompareOperator::Like,
                         query + '%'
                 ),
-                [callback](const std::vector<drogon_model::sqlite3::ContactMessages>& result)
+                [callback](const std::vector<drogon_model::sqlite3::ContactMessages> &result)
                 {
                     // Convert the objects to JSON values to be sent to the client.
-                    Json::Value jsonRoot = Json::Value(Json::arrayValue);
+                    Json::Value                                       jsonRoot = Json::Value(Json::arrayValue);
                     for (const drogon_model::sqlite3::ContactMessages &row : result)
                     {
                         jsonRoot.append(row.toJson());
@@ -53,4 +53,45 @@ void Messages::handleQuery(
         resp->setContentTypeCode(drogon::ContentType::CT_NONE);
         callback(resp);
     }
+}
+
+void Messages::deleteMessage(
+        const HttpRequestPtr &req,
+        std::function<void(const HttpResponsePtr &)> &&callback,
+        const std::string &hash
+)
+{
+    drogon::orm::Mapper<drogon_model::sqlite3::ContactMessages> contactMessagesMapper(drogon::app().getDbClient());
+    // Attempt to delete the requested model.
+    contactMessagesMapper.deleteBy(
+            drogon::orm::Criteria(
+                    drogon_model::sqlite3::ContactMessages::Cols::_hash,
+                    drogon::orm::CompareOperator::EQ,
+                    hash
+            ),
+            [callback](const size_t &deletedRows)
+            {
+                drogon::HttpResponsePtr resp = drogon::HttpResponse::newHttpResponse();
+                resp->setContentTypeCode(drogon::ContentType::CT_NONE);
+
+                if (deletedRows == 0)
+                {
+                    // If no rows were deleted, the specified record does not exist. Therefore, 400 error.
+                    resp->setStatusCode(drogon::HttpStatusCode::k400BadRequest);
+                    callback(resp);
+                }
+                else
+                {
+                    resp->setStatusCode(drogon::HttpStatusCode::k204NoContent);
+                    callback(resp);
+                }
+            },
+            [callback](const drogon::orm::DrogonDbException &exception)
+            {
+                drogon::HttpResponsePtr resp;
+                resp->setStatusCode(drogon::HttpStatusCode::k500InternalServerError);
+                resp->setContentTypeCode(drogon::ContentType::CT_NONE);
+                callback(resp);
+            }
+    );
 }
