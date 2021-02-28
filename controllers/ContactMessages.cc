@@ -10,18 +10,42 @@ void ContactMessages::get(
     contactMessagesMapper.findAll(
             [callback, &req](const std::vector<drogon_model::sqlite3::ContactMessages> &models)
             {
+                // Generate the formatted date for each model and store it in a map.
+                std::map<std::string, std::string>                rgMessageDates;
+                for (const drogon_model::sqlite3::ContactMessages &model : models)
+                {
+                    std::time_t ttMessageCreationTime   = std::chrono::system_clock::to_time_t(
+                            std::chrono::time_point<std::chrono::system_clock>(
+                                    std::chrono::seconds(*model.getSubmissionTs())
+                            )
+                    );
+                    std::tm     *ptmMessageCreationTime = std::gmtime(&ttMessageCreationTime);
+                    char        strFormattedTime[11];
+                    std::strftime(strFormattedTime, sizeof(strFormattedTime), "%Y-%m-%d", ptmMessageCreationTime);
+                    rgMessageDates[*model.getHash()] = std::string(strFormattedTime);
+                }
+
                 // Create the view data and insert the found records.
                 drogon::HttpViewData data;
                 data.insert("contactMessages", models);
-                data.insert("invalidMessage", req->session()->get<bool>("invalidMessage"));
+                data.insert("contactMessageDates", rgMessageDates);
 
                 callback(
                         drogon::HttpResponse::newHttpViewResponse("./views/messages/messages.csp", data)
                 );
             },
-            [](const drogon::orm::DrogonDbException &exception)
+            [callback](const drogon::orm::DrogonDbException &exception)
             {
+                // TODO: Display error message on error.
+                drogon::HttpViewData                                data;
+                std::vector<drogon_model::sqlite3::ContactMessages> rgContactMessages;
+                std::map<std::string, std::string>                  rgMessageDates;
 
+                data.insert("contactMessages", rgContactMessages);
+                data.insert("contactMessageDates", rgMessageDates);
+                callback(
+                        drogon::HttpResponse::newHttpViewResponse("./views/messages/messages.csp", data)
+                );
             }
     );
 }
@@ -56,8 +80,6 @@ void ContactMessages::getMessage(
             },
             [callback, &req](const drogon::orm::DrogonDbException &exception)
             {
-                // Set a flag to display an error after redirecting.
-                req->session()->insert("invalidMessage", true);
                 callback(drogon::HttpResponse::newRedirectionResponse("/contact/messages/"));
             }
     );

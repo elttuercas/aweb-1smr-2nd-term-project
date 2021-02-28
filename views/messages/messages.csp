@@ -1,5 +1,8 @@
 <%inc #include "models/ContactMessages.h" %>
-<%c++ const auto rgMessages = @@.get<const std::vector<drogon_model::sqlite3::ContactMessages>>("contactMessages"); %>
+<%c++
+const auto rgMessages = @@.get<const std::vector<drogon_model::sqlite3::ContactMessages>>("contactMessages");
+auto rgMessageDates = @@.get<std::map<std::string, std::string>>("contactMessageDates");
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <script src="/js/global.js"></script>
+    <script src="/js/messages_table.js"></script>
     <title>Mensajes Contacto - CA</title>
 </head>
 <body>
@@ -29,9 +33,20 @@
             </label>
         </div>
     </div>
-    <table class="contact_messages_table">
+    <table class="contact_messages_table" id="contact_messages_table">
         <thead>
-            <%c++ for (const drogon_model::sqlite3::ContactMessages &msg : rgMessages) { %>
+            <!-- Create one row of table headers when the vector is empty so the table looks normal. -->
+            <%c++ if (rgMessages.size() > 0) { %>
+                <%c++ for (const drogon_model::sqlite3::ContactMessages &msg : rgMessages) { %>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                <%c++ } %>
+            <%c++ } else { %>
                 <tr>
                     <th>Fecha</th>
                     <th>Nombre</th>
@@ -44,7 +59,7 @@
         <tbody>
             <%c++ for (const drogon_model::sqlite3::ContactMessages &msg : rgMessages) { %>
                 <tr>
-                    <td>{%*msg.getSubmissionTs()%}</td>
+                    <td>{%rgMessageDates.at(*msg.getHash())%}</td>
                     <td>{%*msg.getName()%}</td>
                     <td>{%*msg.getSurname()%}</td>
                     <td>{%*msg.getEmail()%}</td>
