@@ -1,0 +1,6 @@
+div {
+    &.contact_messages_view_container {
+        @apply flex flex-col shadow-md container sm:mt-4 mt-6;
+
+    }
+}

@@ -148,6 +148,8 @@ $(document).on('click', '.delete_link', function ()
             {
                 $().appendAlert('green', 'Mensaje borrado con éxito');
                 $this.parents('tr').remove();
+                // Delete the first row of headers for mobile users. This makes it work as intended with only one row left.
+                $('#contact_messages_table thead tr').first().remove();
             },
             error   : function ()
             {

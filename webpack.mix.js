@@ -89,6 +89,18 @@ mix
         }
     )
     .sass(
+        './scss/messages/view.scss',
+        './css/messages'
+    )
+    .options(
+        {
+            processCssUrls: false,
+            postCss: [
+                tailwindcss
+            ]
+        }
+    )
+    .sass(
         './scss/std_alert.scss',
         './css'
     )
@@ -109,6 +121,7 @@ mix.styles(
         './css/std_footer.css',
         './css/contact_form.css',
         './css/messages/table.css',
+        './css/messages/view.css',
         './css/std_alert.css'
     ],
     './css/global.css'
