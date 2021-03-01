@@ -26,24 +26,24 @@ hash - std::string
 <div class="contact_messages_view_container">
     <div class="contact_messages_view_user_data_container">
         <!-- User info -->
-        <ul class="contact_messages_view_user_data">
-            <li>
+        <div class="contact_messages_view_user_data">
+            <div>
                 <p class="contact_messages_view_user_data_field_name">Nombre</p>
                 <p>[[senderName]]</p>
-            </li>
-            <li>
+            </div>
+            <div>
                 <p class="contact_messages_view_user_data_field_name">Apellidos</p>
                 <p>[[senderSurname]]</p>
-            </li>
-            <li>
+            </div>
+            <div>
                 <p class="contact_messages_view_user_data_field_name">Email</p>
                 <p>[[senderEmail]]</p>
-            </li>
-            <li>
+            </div>
+            <div>
                 <p class="contact_messages_view_user_data_field_name">Fecha</p>
                 <p>[[submissionDate]]</p>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
     <div class="contact_messages_view_message_container">
         <!-- Message content -->

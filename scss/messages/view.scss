@@ -1,16 +1,16 @@
 div {
     &.contact_messages_view_container {
-        @apply flex shadow-md container mt-4 mb-4 sm:mt-6 sm:mb-0 rounded-none sm:rounded-lg;
+        @apply flex flex-col lg:flex-row shadow-md container mt-4 mb-4 sm:mt-6 sm:mb-0 rounded-none sm:rounded-lg;
 
         div {
             &.contact_messages_view_user_data_container {
-                @apply flex-row w-1/5 bg-blue-100 rounded-none sm:rounded-l-lg;
+                @apply flex flex-row lg:w-1/3 bg-blue-100 rounded-none lg:rounded-l-lg;
 
-                ul {
+                div {
                     &.contact_messages_view_user_data {
-                        @apply m-3;
+                        @apply m-3 w-full flex flex-col lg:block;
 
-                        li {
+                        div {
                             &:not(:last-child) {
                                 @apply border-b border-gray-300 p-1.5;
                             }
@@ -24,11 +24,11 @@ div {
                             }
 
                             &:first-child {
-                                @apply p-0 pb-1.5;
+                                @apply p-1.5 pt-0;
                             }
 
                             &:last-child {
-                                @apply p-0 pt-1.5;
+                                @apply p-1.5 pb-0;
                             }
 
                             p {
@@ -42,7 +42,7 @@ div {
             }
 
             &.contact_messages_view_message_container {
-                @apply flex-row w-full bg-gray-100 text-gray-700 rounded-none sm:rounded-r-lg relative;
+                @apply flex flex-row w-full bg-gray-100 text-gray-700 rounded-none lg:rounded-r-lg relative;
 
                 p {
                     &.contact_messages_view_message {
