@@ -45,6 +45,9 @@ COPY ./models /aweb-proj/models
 # Copy empty sqlite database template
 COPY ./main_db_tmpl.sqlite /aweb-proj/main_db.sqlite
 
+# Copy media files
+COPY ./media /aweb-proj/media
+
 # Create webpack production files
 RUN npm run prod
 
