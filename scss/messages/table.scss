@@ -50,10 +50,14 @@ div {
                     }
 
                     th {
-                        @apply p-4 text-left text-sm font-medium text-gray-700 uppercase leading-tight;
+                        @apply p-4 text-left text-sm font-medium text-gray-700 uppercase;
 
                         &:not(:last-child) {
                             @apply border-b-2;
+                        }
+
+                        &:last-child {
+                            padding: 27px;
                         }
                     }
                 }
@@ -65,16 +69,18 @@ div {
                         @apply bg-gray-50 font-medium text-sm flex flex-col flex-nowrap sm:table-row mb-2 sm:mb-0;
 
                         td {
-                            @apply p-4 whitespace-nowrap;
+                            @apply whitespace-nowrap;
                             // Set font size to 0 because whitespace is a bitch.
                             font-size: 0;
+                            padding: 17px;
 
                             p {
                                 @apply text-sm;
                             }
 
-                            &:last-of-type {
+                            &:last-child {
                                 @apply text-center;
+                                padding: 11px;
                             }
 
                             &:not(:last-child) {
