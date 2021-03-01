@@ -62,10 +62,10 @@ function updateTableValues(apiData : Array<ContactMessage>)
 
             // Append the object data to the row.
             newBodyTr.append(
-                $('<td>' + formattedDate + '</td>'),
-                $('<td>' + datum.name + '</td>'),
-                $('<td>' + datum.surname + '</td>'),
-                $('<td>' + datum.email + '</td>'),
+                $('<td><p>' + formattedDate + '</p></td>'),
+                $('<td><p>' + datum.name + '</p></td>'),
+                $('<td><p>' + datum.surname + '</p></td>'),
+                $('<td><p>' + datum.email + '</p></td>'),
                 linksCell
             );
             // Append the new row to the table.
@@ -142,14 +142,14 @@ $(document).on('click', '.delete_link', function ()
     let $this = $(this);
     $.ajax(
         {
-            url    : '/api/messages/delete/' + $this.data('hash') + '/',
-            method : 'delete',
+            url     : '/api/messages/delete/' + $this.data('hash') + '/',
+            method  : 'delete',
             success : function ()
             {
                 $().appendAlert('green', 'Mensaje borrado con éxito');
                 $this.parents('tr').remove();
             },
-            error : function ()
+            error   : function ()
             {
                 $().appendAlert('red', 'Se ha producido un error. Inténtelo de nuevo más tarde');
             }

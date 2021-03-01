@@ -66,6 +66,12 @@ div {
 
                         td {
                             @apply p-4 whitespace-nowrap;
+                            // Set font size to 0 because whitespace is a bitch.
+                            font-size: 0;
+
+                            p {
+                                @apply text-sm;
+                            }
 
                             &:last-of-type {
                                 @apply text-center;
@@ -82,8 +88,13 @@ div {
                                 &.view_link {
                                     @apply border-green-500 hover:bg-green-500;
                                 }
+
                                 &.delete_link {
                                     @apply border-red-500 hover:bg-red-500;
+                                }
+
+                                &:not(:first-child) {
+                                    @apply ml-1;
                                 }
                             }
                         }
@@ -94,7 +105,7 @@ div {
                     display: inline-table !important;
 
                     thead tr:not(:first-child) {
-                        display: none;
+                        @apply hidden;
                     }
                 }
             }
