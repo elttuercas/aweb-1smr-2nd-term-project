@@ -1,6 +1,61 @@
 div {
     &.contact_messages_view_container {
-        @apply flex flex-col shadow-md container sm:mt-4 mt-6;
+        @apply flex shadow-md container mt-4 mb-4 sm:mt-6 sm:mb-0 rounded-none sm:rounded-lg;
 
+        div {
+            &.contact_messages_view_user_data_container {
+                @apply flex-row w-1/5 bg-blue-100 rounded-none sm:rounded-l-lg;
+
+                ul {
+                    &.contact_messages_view_user_data {
+                        @apply m-3;
+
+                        li {
+                            &:not(:last-child) {
+                                @apply border-b border-gray-300 p-1.5;
+                            }
+
+                            &:nth-child(odd) {
+                                @apply text-right text-blue-600;
+                            }
+
+                            &:nth-child(even) {
+                                @apply text-left text-blue-900;
+                            }
+
+                            &:first-child {
+                                @apply p-0 pb-1.5;
+                            }
+
+                            &:last-child {
+                                @apply p-0 pt-1.5;
+                            }
+
+                            p {
+                                &.contact_messages_view_user_data_field_name {
+                                    @apply tracking-wider uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.contact_messages_view_message_container {
+                @apply flex-row w-full bg-gray-100 text-gray-700 rounded-none sm:rounded-r-lg relative;
+
+                p {
+                    &.contact_messages_view_message {
+                        @apply m-3;
+                    }
+                }
+
+                i {
+                    &.contact_messages_view_delete_message {
+                        @apply absolute top-1 right-2 hover:text-red-500 cursor-pointer text-red-300 z-10;
+                    }
+                }
+            }
+        }
     }
 }

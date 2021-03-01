@@ -131,3 +131,4 @@ mix.styles(
 mix.js('./ts/global.ts', './js/global.js');
 mix.js('./ts/contact_form.ts', './js/contact_form.js');
 mix.js('./ts/messages_table.ts', './js/messages_table.js');
+mix.js('./ts/messages_view.ts', './js/messages_view.js');

@@ -95,6 +95,7 @@ void ContactMessages::getMessage(
                 data.insert("senderEmail", *model.getEmail());
                 data.insert("message", *model.getMessage());
                 data.insert("submissionDate", std::string(strFormattedTime));
+                data.insert("hash", *model.getHash());
 
                 callback(drogon::HttpResponse::newHttpViewResponse("./views/messages/view.csp", data));
             },

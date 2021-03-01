@@ -76,7 +76,7 @@ div {
                                 > div {
                                     &.std_nav_dropdown_container {
                                         @apply absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48;
-                                        @apply hidden;
+                                        @apply hidden z-50;
 
                                         > div {
                                             &.std_nav_dropdown_content {

@@ -1,6 +1,6 @@
 div {
     &.contact_messages_table_container {
-        @apply flex flex-col shadow-md container sm:mt-4 mt-6;
+        @apply flex flex-col shadow-md container mt-4 sm:mb-4 sm:mt-6 sm:mb-0;
 
         div {
             &.contact_messages_table_tools {

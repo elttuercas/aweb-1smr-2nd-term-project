@@ -1,55 +1,58 @@
 <%c++ uint64_t messageID = @@.get<uint64_t>("messageID"); %>
-    <!DOCTYPE html>
-    <!--
-    Template data:
-    messageID - int
-    senderName - std::string
-    senderSurname - std::string
-    senderEmail - std::string
-    message - std::string
-    submissionDate - std::string
-    -->
-    <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/global.css">
-        <script src="/js/global.js"></script>
-        <title>Mensaje {%messageID%} - CA</title>
-    </head>
-    <body>
-    <!-- Standard header -->
-    <%view ./views/vstd/header.csp %>
+<!DOCTYPE html>
+<!--
+Template data:
+messageID - int
+senderName - std::string
+senderSurname - std::string
+senderEmail - std::string
+message - std::string
+submissionDate - std::string
+hash - std::string
+-->
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/global.js"></script>
+    <script src="/js/messages_view.js"></script>
+    <title>Mensaje {%messageID%} - CA</title>
+</head>
+<body>
+<!-- Standard header -->
+<%view ./views/vstd/header.csp %>
 
-    <div class="contact_messages_view_container flex flex-col shadow-md container mt-6 sm:mt-4">
-        <div>
-            <!-- User info -->
-            <ul>
-                <li>
-                    <p>Nombre</p>
-                    <p>[[senderName]]</p>
-                </li>
-                <li>
-                    <p>Apellidos</p>
-                    <p>[[senderSurname]]</p>
-                </li>
-                <li>
-                    <p>Email</p>
-                    <p>[[senderEmail]]</p>
-                </li>
-                <li>
-                    <p>Fecha</p>
-                    <p>[[submissionDate]]</p>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <!-- Message content -->
-            <p>[[message]]</p>
-        </div>
+<div class="contact_messages_view_container">
+    <div class="contact_messages_view_user_data_container">
+        <!-- User info -->
+        <ul class="contact_messages_view_user_data">
+            <li>
+                <p class="contact_messages_view_user_data_field_name">Nombre</p>
+                <p>[[senderName]]</p>
+            </li>
+            <li>
+                <p class="contact_messages_view_user_data_field_name">Apellidos</p>
+                <p>[[senderSurname]]</p>
+            </li>
+            <li>
+                <p class="contact_messages_view_user_data_field_name">Email</p>
+                <p>[[senderEmail]]</p>
+            </li>
+            <li>
+                <p class="contact_messages_view_user_data_field_name">Fecha</p>
+                <p>[[submissionDate]]</p>
+            </li>
+        </ul>
     </div>
+    <div class="contact_messages_view_message_container">
+        <!-- Message content -->
+        <p class="contact_messages_view_message">[[message]]</p>
+        <i class="contact_messages_view_delete_message uil uil-times-circle" title="Borrar mensaje" data-hash="[[hash]]" id="contact_messages_view_delete_message"></i>
+    </div>
+</div>
 
-    <!-- Standard footer -->
-    <%view ./views/vstd/footer.csp %>
-    </body>
-    </html>
+<!-- Standard footer -->
+<%view ./views/vstd/footer.csp %>
+</body>
+</html>
