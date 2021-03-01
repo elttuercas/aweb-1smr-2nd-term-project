@@ -23,7 +23,7 @@
         <div class="std_footer_column">
             <div class="std_footer_column_title">Otros</div>
             <a href="/contact/" class="std_footer_link">Contacto</a>
-            <a href="/about-us/" class="std_footer_link">Nosotros</a>
+            <a href="https://hub.docker.com/repository/docker/eltuercas/aweb-1smr-2nd-term-project" class="std_footer_link">Docker</a>
             <a href="https://www.jetbrains.com/" class="std_footer_link">IDEs</a>
         </div>
     </div>
