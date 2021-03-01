@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/global.js"></script>
+    <link rel="stylesheet" href="/css/global.css">
+    <title>Nosotros - CA</title>
+</head>
+<body>
+<!-- Standard header -->
+<%view ./views/vstd/header.csp %>
+
+<div class="about_container bg-white mt-20">
+    <div class="about_introduction max-w-2xl px-6 text-center mx-auto">
+        <h2 class="about_introduction_greeting text-3xl font-semibold text-gray-800">
+            Hola, <span class="about_introduction_highlight bg-indigo-600 text-white rounded px-1">soy Carlos Amores</span> .
+        </h2>
+    </div>
+    <div class="about_picture flex items-end justify-center mt-16">
+        <img src="https://raw.githubusercontent.com/elttuercas/aweb-1smr-2nd-term-project/master/media/images/IMG_20191118_153903_5.png" alt="Carlos Amores">
+    </div>
+</div>
+
+<!-- Standard footer -->
+<%view ./views/vstd/footer.csp %>
+</body>
+</html>
