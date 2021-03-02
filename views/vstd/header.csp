@@ -21,7 +21,7 @@ alerts - std::map<std::string, std::vector<std::string>>
         <nav id="std_nav" class="std_nav">
             <a href="/" class="std_nav_link">Inicio</a>
             <a href="/contact/messages/" class="std_nav_link">Mensajes</a>
-            <a href="/about/" class="std_nav_link">Acerca De</a>
+            <a href="/about/" class="std_nav_link">Acerca de</a>
             <div class="std_nav_dropdown">
                 <button id="std_nav_dropdown_button" class="std_nav_dropdown_button">
                     <span>Programación</span>
