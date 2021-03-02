@@ -11,14 +11,132 @@
 <!-- Standard header -->
 <%view ./views/vstd/header.csp %>
 
-<div class="about_container bg-white mt-20">
-    <div class="about_introduction max-w-2xl px-6 text-center mx-auto">
-        <h2 class="about_introduction_greeting text-3xl font-semibold text-gray-800">
-            Hola, <span class="about_introduction_highlight bg-indigo-600 text-white rounded px-1">soy Carlos Amores</span> .
+<div class="about_container">
+    <div class="about_introduction">
+        <h2 class="about_introduction_greeting">
+            Hola, <span
+                class="about_introduction_highlight">soy Carlos Amores</span> .
         </h2>
     </div>
-    <div class="about_picture flex items-end justify-center mt-16">
-        <img src="https://raw.githubusercontent.com/elttuercas/aweb-1smr-2nd-term-project/master/media/images/IMG_20191118_153903_5.png" alt="Carlos Amores">
+
+    <div class="about_picture">
+        <img src="/media/images/IMG_20191118_153903_5.png"
+             alt="Carlos Amores">
+    </div>
+
+    <div class="fancy_background_container">
+        <div class="fancy_background_content">
+            <h2 class="fancy_background_header">Sobre mí</h2>
+            <p class="fancy_background_text">
+                Soy un desarrollador web con un año de experiencia profesional trabajando con PHP, MySQL, Composer,
+                JavaScript y TypeScript. He trabajado como ingeniero jefe de sistemas y software dirigiendo un equipo
+                de varias personas para alcanzar objetivos en un entorno de desarrollo ágil. También tengo experiencia
+                trabajando con lenguajes de programación de medio nivel como C y C++.
+            </p>
+        </div>
+    </div>
+
+    <div class="about_news_container">
+        <div class="about_news">
+            <h2 class="about_news_header">
+                Últimas noticias
+            </h2>
+            <div class="about_news_list">
+                <a href="https://github.com/an-tao/drogon/releases/tag/v1.3.0" class="about_news_link">
+                    <div class="about_news_item">
+                        <h3 class="about_news_title">
+                            Lanzamiento Drogon 1.3.0
+                        </h3>
+                        <span class="about_news_date">
+                            17 Ene 2021
+                        </span>
+                    </div>
+                </a>
+                <a href="https://www.php.net/releases/8.0/en.php" class="about_news_link">
+                    <div class="about_news_item">
+                        <h3 class="about_news_title">
+                            Lanzamiento PHP 8
+                        </h3>
+                        <span class="about_news_date">
+                            26 Nov 2020
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="about_news_view_more">
+                <a href="#" class="about_news_view_more_link">
+                    Ver más <i class="about_news_view_more_link_icon uil uil-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="about_personal_projects fancy_background_container">
+        <div class="fancy_background_content">
+            <h2 class="fancy_background_header">
+                Proyectos Personales
+            </h2>
+            <div class="about_personal_projects_container">
+                <div class="about_personal_projects_list">
+                    <div class="about_personal_project">
+                        <div class="about_personal_project_image">
+                            <img src="https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png" alt="C++ Logo">
+                        </div>
+
+                        <a href="https://github.com/elttuercas/emt-cpp" class="about_personal_project_link">
+                            <div class="about_personal_project_description">
+                                <p class="about_personal_project_description_text">
+                                    EMT, siglas en inglés de Event Management Tool (Herramienta de Gestión de Eventos).
+                                    Es una aplicación web que se conecta con un bot de Discord y una comunidad IPS para
+                                    proveer funcionalidades.
+                                </p>
+                                <span class="about_personal_project_url">
+                                    github.com
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="about_personal_project">
+                        <div class="about_personal_project_image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript Logo">
+                        </div>
+
+                        <a href="https://github.com/elttuercas/emt-discord-bot" class="about_personal_project_link">
+                            <div class="about_personal_project_description">
+                                <p class="about_personal_project_description_text">
+                                    EMT-Discord-Bot, bot para Discord escrito en TypeScript que interacciona con la
+                                    aplicación web de EMT y provee la funcionalidad en el servidor de Discord.
+                                </p>
+                                <span class="about_personal_project_url">
+                                    github.com
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="about_personal_project">
+                        <div class="about_personal_project_image">
+                            <img src="https://www.php.net/images/logos/php-logo-bigger.png" alt="PHP Logo">
+                        </div>
+
+                        <a href="https://github.com/elttuercas/synful" class="about_personal_project_link">
+                            <div class="about_personal_project_description">
+                                <p class="about_personal_project_description_text">
+                                    Synful. Es una biblioteca para crear una API simple con PHP.
+                                    El nombre está basado en "sinful", "pecaminoso" en inglés. Un juego de palabras
+                                    debido a que esta biblioteca utiliza elementos de la biblioteca de PHP "Symfony".
+                                </p>
+                                <span class="about_personal_project_url">
+                                    github.com
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

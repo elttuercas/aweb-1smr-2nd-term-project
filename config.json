@@ -150,6 +150,15 @@
                 "allow_all": false,
                 "is_recursive": true,
                 "filters": []
+            },
+            {
+                "uri_prefix": "/media",
+                "default_content_type": "image/png",
+                "alias": "/home/eltu/dev/aweb-2do-trimestre-proyecto/media",
+                "is_case_sensitive": true,
+                "allow_all": false,
+                "is_recursive": true,
+                "filters": []
             }
         ],
         //max_connections: maximum connections number,100000 by default

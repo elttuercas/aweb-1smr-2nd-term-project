@@ -111,6 +111,18 @@ mix
                 tailwindcss
             ]
         }
+    )
+    .sass(
+        './scss/about.scss',
+        './css'
+    )
+    .options(
+        {
+            processCssUrls: false,
+            postCss: [
+                tailwindcss
+            ]
+        }
     );
 
 // Concatenate all CSS assets together.
@@ -122,7 +134,8 @@ mix.styles(
         './css/contact_form.css',
         './css/messages/table.css',
         './css/messages/view.css',
-        './css/std_alert.css'
+        './css/std_alert.css',
+        './css/about.css'
     ],
     './css/global.css'
 );
