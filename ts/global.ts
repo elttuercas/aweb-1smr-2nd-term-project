@@ -162,7 +162,7 @@ $(document).on('click', '.std_alert_close_container', function ()
     let alertsContainer : JQuery = $('#std_alerts_container');
     if (alertsContainer.children().length === 0)
     {
-        alertsContainer.hide();
+        alertsContainer.hide(0);
     }
 });
 
@@ -176,6 +176,6 @@ $(function ()
     let alertsContainer : JQuery = $('#std_alerts_container');
     if (alertsContainer.children().length === 0)
     {
-        alertsContainer.hide();
+        alertsContainer.hide(0);
     }
 });

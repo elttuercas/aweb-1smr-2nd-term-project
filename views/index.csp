@@ -5,11 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <script src="/js/global.js"></script>
+    <script src="/js/index.js"></script>
     <title>Inicio - CA</title>
 </head>
 <body>
 <!-- Standard header -->
 <%view ./views/vstd/header.csp %>
+
+<div class="index_main">
+    <div class="index_slider_container">
+        <!-- Slide 1 -->
+        <div class="index_slider_slide">
+            <div class="index_slider_background">
+                <div class="index_slider_text_container">
+                    <p class="index_slider_text_category">DbOps</p>
+                    <p class="index_slider_text_header">Gestión de Bases de Datos</p>
+                    <p class="index_slider_text_desc">
+                        Gestionamos bases de datos SQL y NoSQL como: MySQL, PostgreSQL, MariaDB, SQLite3,
+                        MongoDB, Cassandra, HBase, etc.
+                    </p>
+                    <a href="/contact/" class="index_slider_link">
+                        Solicitar presupuesto
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="index_slider_slide">
+            <div class="index_slider_background">
+                <div class="index_slider_text_container">
+                    <p class="index_slider_text_category">WebOps</p>
+                    <p class="index_slider_text_header">Desarrollo Web</p>
+                    <p class="index_slider_text_desc">
+                        Ofrecemos un servicio de diseño y desarrollo web completamente integrado con nuestros
+                        clientes con tecnologías como PHP, JavaScript, React.js, Node.js, etc.
+                    </p>
+                    <a href="/contact/" class="index_slider_link">
+                        Solicitar presupuesto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index_slider_controls">
+        <button class="index_slider_button index_slider_button_active"></button>
+        <button class="index_slider_button"></button>
+    </div>
+</div>
+
 <!-- Standard footer -->
 <%view ./views/vstd/footer.csp %>
 </body>

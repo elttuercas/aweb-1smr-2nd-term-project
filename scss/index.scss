@@ -1,0 +1,81 @@
+div {
+    &.index_main {
+        @apply container;
+
+        div {
+            &.index_slider_container {
+                @apply h-auto mb-5;
+
+                div {
+                    &.index_slider_slide {
+                        @apply mx-auto;
+
+                        // Sadly the background images have to be added manually to each slide.
+                        &:nth-of-type(1) {
+                            div {
+                                &.index_slider_background {
+                                    background-image: url('https://www.lifewire.com/thmb/IR3yNccsN2jOjXuZ6n_DUmqRcpM=/4248x2389/smart/filters:no_upscale()/sql-code-on-black-183029104-599b4ac60d327a00119b7053-f998acddfcd0428d9b6a37eebc3c3bf4.jpg');
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            div {
+                                &.index_slider_background {
+                                    background-image: url('https://stackify.com/wp-content/uploads/2019/06/codeshot.jpg');
+                                }
+                            }
+                        }
+
+                        div {
+                            &.index_slider_background {
+                                @apply bg-cover bg-center h-auto text-white py-24 px-10 object-fill;
+
+                                div {
+                                    &.index_slider_text_container {
+                                        @apply md:w-1/2 bg-gray-800 p-6 rounded-lg;
+
+                                        p {
+                                            &.index_slider_text_category {
+                                                @apply font-bold text-sm uppercase;
+                                            }
+
+                                            &.index_slider_text_header {
+                                                @apply text-3xl font-bold;
+                                            }
+
+                                            &.index_slider_text_desc {
+                                                @apply text-2xl mb-10 leading-none;
+                                            }
+                                        }
+
+                                        a {
+                                            &.index_slider_link {
+                                                @apply bg-blue-800 py-4 px-8 text-white font-bold uppercase text-xs;
+                                                @apply rounded hover:bg-gray-200 hover:text-gray-800;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.index_slider_controls {
+        @apply flex justify-between w-12 mx-auto pb-2;
+
+        button {
+            &.index_slider_button {
+                @apply bg-blue-400 rounded-full w-4 p-2;
+            }
+
+            &.index_slider_button_active {
+                @apply bg-blue-800;
+            }
+        }
+    }
+}
