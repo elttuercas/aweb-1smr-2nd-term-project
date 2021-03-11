@@ -21,8 +21,8 @@
                     <p class="index_slider_text_category">DbOps</p>
                     <p class="index_slider_text_header">Gestión de Bases de Datos</p>
                     <p class="index_slider_text_desc">
-                        Gestionamos bases de datos SQL y NoSQL como: MySQL, PostgreSQL, MariaDB, SQLite3,
-                        MongoDB, Cassandra, HBase, etc.
+                        Gestionamos bases de datos SQL y NoSQL: MySQL, PostgreSQL, MariaDB, SQLite3,
+                        MongoDB, Cassandra, HBase...
                     </p>
                     <a href="/contact/" class="index_slider_link">
                         Solicitar presupuesto
@@ -38,7 +38,7 @@
                     <p class="index_slider_text_header">Desarrollo Web</p>
                     <p class="index_slider_text_desc">
                         Ofrecemos un servicio de diseño y desarrollo web completamente integrado con nuestros
-                        clientes con tecnologías como PHP, JavaScript, React.js, Node.js, etc.
+                        clientes con tecnologías como PHP, JavaScript, React.js, Node.js...
                     </p>
                     <a href="/contact/" class="index_slider_link">
                         Solicitar presupuesto
@@ -50,6 +50,63 @@
     <div class="index_slider_controls">
         <button class="index_slider_button index_slider_button_active"></button>
         <button class="index_slider_button"></button>
+    </div>
+
+    <div class="index_card_header">
+        <h1 class="index_card_header_text">
+                <span>
+                    Servicios de Programación
+                </span>
+            <span class="index_card_header_text_highlight">
+                Para Todos
+            </span>
+        </h1>
+    </div>
+    <div class="index_cards_container">
+        <div class="index_cards">
+            <!-- Card 1 -->
+            <div class="index_card_wrapper">
+                <div class="index_card">
+                    <h2 class="index_card_title">Aplicaciones flexibles</h2>
+                    <ul class="index_card_features">
+                        <li><i class="uil uil-check"></i> Hechas a medida</li>
+                        <li><i class="uil uil-check"></i> Calidad artesanal</li>
+                        <li><i class="uil uil-check"></i> Fáciles de gestionar</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="index_card_wrapper">
+                <div class="index_card">
+                    <h2 class="index_card_title">
+                        Soporte a Largo Plazo
+                    </h2>
+                    <ul class="index_card_features">
+                        <li><i class="uil uil-check"></i> Corrección de errores</li>
+                        <li><i class="uil uil-check"></i> Ampliación de características</li>
+                        <li><i class="uil uil-check"></i> Migración de plataforma</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="index_card_wrapper">
+                <div class="index_card">
+                    <h2 class="index_card_title">
+                        Diseño Móvil
+                    </h2>
+                    <ul class="index_card_features">
+                        <li><i class="uil uil-check"></i> Compatibilidad con dispositivos móviles</li>
+                        <li><i class="uil uil-check"></i> Código ligero</li>
+                        <li><i class="uil uil-check"></i> Optimización uso datos móviles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index_pricing_link">
+        <a href="#">
+            Ver precios <i class="uil uil-arrow-right"></i>
+        </a>
     </div>
 </div>
 

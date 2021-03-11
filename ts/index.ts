@@ -28,9 +28,9 @@ $(function ()
         }
 
         // Fade out all slides.
-        slides.fadeOut(400);
+        slides.hide(400);
         // Fade in the next slide.
-        $(slides[currentSlide]).delay(400).fadeIn(400);
+        $(slides[currentSlide]).show(400);
         // Style the current button accordingly.
         slideControlButtons.removeClass('index_slider_button_active');
         $(slideControlButtons[currentSlide]).addClass('index_slider_button_active');
@@ -43,8 +43,8 @@ $(function ()
         // Associate each button with a slide. First with first, second with second, etc.
         $(button).on('click', function ()
         {
-            slides.fadeOut(400);
-            $(slides[i]).delay(400).fadeIn(400);
+            slides.hide(400);
+            $(slides[i]).show(400);
             slideControlButtons.removeClass('index_slider_button_active');
             $(this).addClass('index_slider_button_active');
             // Also when the button is clicked, adjust the current slide accordingly as well as reset the interval.

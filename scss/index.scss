@@ -78,4 +78,63 @@ div {
             }
         }
     }
+
+    &.index_card_header {
+        @apply text-center font-semibold my-6;
+
+        h1 {
+            &.index_card_header_text {
+                @apply text-5xl text-black;
+
+                span {
+                    &.index_card_header_text_highlight {
+                        @apply text-blue-700 tracking-wide;
+                    }
+                }
+            }
+        }
+    }
+
+    &.index_cards_container {
+        @apply w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10;
+
+        div {
+            &.index_cards {
+                @apply w-full md:flex mb-5;
+
+                div {
+                    &.index_card_wrapper {
+                        @apply w-full md:w-1/4 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3;
+                        @apply mx-auto md:my-6 rounded-md shadow-lg md:flex md:flex-col;
+
+                        div {
+                            &.index_card {
+                                @apply w-full flex-grow;
+
+                                h2 {
+                                    &.index_card_title {
+                                        @apply text-center text-3xl font-bold uppercase mb-4;
+                                    }
+                                }
+
+                                ul {
+                                    &.index_card_features {
+                                        @apply text-sm px-5 mb-8;
+
+                                        li {
+                                            @apply leading-tight;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.index_pricing_link {
+        @apply text-center mb-3 sm:mb-0;
+    }
 }
