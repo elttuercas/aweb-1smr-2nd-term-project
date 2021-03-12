@@ -1,2 +1,36 @@
 URL: https://aweb.eltu.engineer/
 Código fuente: https://github.com/elttuercas/aweb-1smr-2nd-term-project
+
+Ejecución local:
+
+DOCKER
+Es el método más fácil de ejecutar el servidor y todas sus dependencias en una máquina de Windows. Se puede crear
+el servidor con un sólo comando de Windows PowerShell:
+
+docker run -dp 8080:80 docker.io/eltuercas/aweb-1smr-2nd-term-project
+
+Este comando hace que el servidor sea accesible de forma local en el puerto 8080 y se puede acceder a la página web
+a través del navegador en la dirección localhost:8080
+
+Este método no permite realizar modificaciones en la página web de forma local.
+
+COMPILACIÓN
+Es el método para crear el servidor de desarrollo y realizar cambios en la página web y require un sistema linux con
+las siguientes dependencias instaladas:
+- Drogon (Ver guía de instalación: https://drogon.docsforge.com/master/installation/)
+- npm
+- nano
+
+Compilación paso a paso
+Todos los comandos deben ser ejecutados desde el terminal
+
+1. git clone https://github.com/elttuercas/aweb-1smr-2nd-term-project.git
+2. cd aweb-1smr-2nd-term-project
+3. npm install && npm run dev
+4. mkdir build && cd build
+5. cmake -DCMAKE_CXX_FLAGS="-fcoroutines" .. && make
+6. sudo ./aweb-1smr-2nd-term-project*
+
+* Antes de ejecutar el servidor en el paso 6, comprobar que las rutas para servir archivos de forma estática por
+el servidor coninciden con las rutas absolutas locales donde se encuentran los archivos de la aplicación. Archivo
+config.json, líneas 127-162. Documentación: https://drogon.docsforge.com/master/configuration-file/
